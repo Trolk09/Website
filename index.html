@@ -14,12 +14,17 @@
 </head>
 <body>
     <h1>Hi, this is my website I post stuff here</h1>
-    <div class="note">(last updated: 30/06/2025)</div>
+    <div class="note" id="last-updated"></div>
 
     <ul>
         <li>
             <a href="https://trolk09.github.io/Divyam-s-Website/" target="_blank">
-                My Files (Personal website) [Last Updated: 30/06/2025]
+                My Files (GitHub Pages, permanent)
+            </a>
+        </li>
+        <li>
+            <a href="https://f941-2409-40d5-5b-1a04-8c88-e57d-a327-3dbc.ngrok-free.app" target="_blank">
+                My Files (ngrok)
             </a>
         </li>
         <li>
@@ -31,5 +36,12 @@
             </a>
         </li>
     </ul>
+
+    <script>
+        // Automatically show the last updated time of this HTML file
+        const lastMod = new Date(document.lastModified);
+        document.getElementById('last-updated').textContent =
+            "Last updated: " + lastMod.toLocaleString();
+    </script>
 </body>
 </html>
