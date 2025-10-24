@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-</head>
-       <meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
     <title>My Personal Website</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 40px; }
-        .note { color: #555; font-size: 0.95em; }
+        .note { color: #555; font-size: 0.95em; margin-top: 10px; }
         ul { margin-top: 24px; }
         li { margin-bottom: 14px; font-size: 1.1em; }
         a { color: #1a0dab; text-decoration: none; }
         a:hover { text-decoration: underline; }
     </style>
+</head>
 <body>
-    <h1>Hi, this is my website,i post stuff here</h1>
+    <h1>Hi, this is my website, I post stuff here</h1>
     <div class="note" id="last-updated"></div>
+
     <ul>
-        </li>
-        <li>
-            <a href="" target="_blank">
-                My Files
-            </a>
-        </li>
-        <li>
-            <a href="https://trolk09.github.io/Website/funnyphoto.jpg" target="_blank">funny photo</a>
-        </li>
-        <li>
-            <a href="https://replit.com/join/hxzhwlfqgq-jshhhedjdj" target="_blank">Replit Website stuff</a>
-            <script>
-        // Automatically show the last updated time of this HTML file
-        const lastMod = new Date(document.lastModified);
-        document.getElementById('last-updated').textContent =
-            "Last updated: " + lastMod.toLocaleString();
-            <div class="note" id="last-updated"></div>
-            </a>
-        </li>
+        <li><a href="" target="_blank">My Files</a></li>
+        <li><a href="https://trolk09.github.io/Website/funnyphoto.jpg" target="_blank">Funny Photo</a></li>
+        <li><a href="https://replit.com/join/hxzhwlfqgq-jshhhedjdj" target="_blank">Replit Website Stuff</a></li>
     </ul>
+
+    <script>
+        // Convert timestamp to "time ago" format
+        function timeAgo(date) {
+            const seconds = Math.floor((new Date() - date) / 1000);
+            const intervals = {
+                year: 31536000,
+                month: 2592000,
+                week: 604800,
+                day: 86400,
+                hour: 3600,
+                minute: 60,
+                second: 1
+            };
+
+            for (const [unit, value] of Object.entries(intervals)) {
+                const count = Math.floor(seconds / value);
+                if (count >= 1) {
+                    return `Updated ${count} ${unit}${count > 1 ? 's' : ''} ago`;
+                }
+            }
+            return "Updated just now";
+        }
+
+        const lastMod = new Date(document.lastModified);
+        document.getElementById('last-updated').textContent = timeAgo(lastMod);
     </script>
 </body>
 </html>
