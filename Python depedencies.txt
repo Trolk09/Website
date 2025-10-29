@@ -1,0 +1,2 @@
+pip install ultralytics opencv-python (food detection)
+pip install ultralytics opencv-python easyocr imutils numpy (red light detection)
